@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gyanendra Jha | FAQ &amp; Contact</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-error": "#ffffff",
+                "outline": "#737685",
+                "tertiary": "#5e3c00",
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#7d5200",
+                "primary-container": "#0052cc",
+                "on-tertiary-fixed": "#291800",
+                "primary-fixed-dim": "#b2c5ff",
+                "surface-container": "#e8edff",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed": "#001f27",
+                "surface-container-low": "#f1f3ff",
+                "on-primary-fixed": "#001848",
+                "on-surface": "#041b3c",
+                "surface-dim": "#cadaff",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffddb3",
+                "on-primary-container": "#c4d2ff",
+                "surface-bright": "#f9f9ff",
+                "on-background": "#041b3c",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed-dim": "#48d7f9",
+                "primary": "#003d9b",
+                "on-error-container": "#93000a",
+                "surface": "#f9f9ff",
+                "on-surface-variant": "#434654",
+                "secondary-container": "#50dcff",
+                "inverse-primary": "#b2c5ff",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#624000",
+                "on-primary-fixed-variant": "#0040a2",
+                "tertiary-fixed-dim": "#ffb950",
+                "background": "#f9f9ff",
+                "on-secondary-container": "#005f71",
+                "outline-variant": "#c3c6d6",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#dae2ff",
+                "secondary": "#00687b",
+                "surface-container-high": "#e0e8ff",
+                "on-tertiary-container": "#ffca81",
+                "inverse-on-surface": "#edf0ff",
+                "inverse-surface": "#1d3052",
+                "surface-variant": "#d7e2ff",
+                "surface-tint": "#0c56d0",
+                "secondary-fixed": "#afecff",
+                "surface-container-highest": "#d7e2ff",
+                "on-secondary-fixed-variant": "#004e5d"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "base": "8px",
+                "margin-desktop": "40px",
+                "section-gap": "80px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "display-lg": ["Hanken Grotesk"],
+                "body-md": ["Inter"],
+                "headline-md": ["Hanken Grotesk"],
+                "body-lg": ["Inter"],
+                "display-lg-mobile": ["Hanken Grotesk"],
+                "label-caps": ["Inter"],
+                "headline-sm": ["Hanken Grotesk"],
+                "label-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "label-code": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            color: #041b3c;
+            overflow-x: hidden;
+        }
+        .faq-accordion-item:hover .faq-icon {
+            transform: rotate(90deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .contact-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .contact-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 20px rgba(23, 43, 77, 0.08);
+        }
+
+        /* Chat Widget Styles */
+        .glassmorphism {
+            background: rgba(4, 27, 60, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #chat-widget {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+        #chat-widget.hidden-chat {
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .typing-dot {
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<nav class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">
+            Gyanendra Jha
+        </div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Courses</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Schedule</a>
+<a class="font-body-md text-body-md text-primary dark:text-secondary-fixed border-b-2 border-primary dark:border-secondary-fixed pb-1" href="#">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-bold hover:opacity-90 transition-opacity">
+            Register Now
+        </button>
+</nav>
+</header>
+<main class="mt-16">
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low py-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase mb-4 block">Expert Guidance</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-on-surface">Questions &amp; Connections</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Everything you need to know about our Python training programs and how to get started on your professional development journey.
+                </p>
+</div>
+<div class="hidden md:block">
+<div class="aspect-video bg-surface-container overflow-hidden rounded-xl">
+<img alt="Professional Python Workspace" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdAJX53s1wJeE86y5NDbNGCxPSNK41u6nYKC-7xfnexVSQAnHWOPdV-d8GTHVKVlc9u93-_bAk3tDN_kbmto1qyUScZxdjs5nQkG5th4SzNiW8z7F6pSpHo0QPkCeWyvWef91WT1oCDmMPyW1pdtyBCfGMDp6Je_LI-EprOdrvpbZWO0o6A9xrEaxxy9v8jBYzmGRd0QMd-x5Rrq3cEYyaN9Av7rqxKBa2tw2LV2BaZEkiMLNHUkxqaoKSnlGok6Dgu99CPU1-SsM"/>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-[800px] mx-auto">
+<div class="text-center mb-16 py-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Ask Our Python AI Assistant</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-2xl mx-auto">Get instant answers from our Python training materials, AI courses, RAG projects, MCP tutorials, automation labs, and class notes.</p>
+<div class="flex flex-col items-center gap-4">
+<!-- Original button removed as requested -->
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Ask questions about Python, AI, RAG, MCP, n8n, Automation, and Data Analysis</p>
+<div class="mt-4 text-on-surface-variant font-body-md italic">
+<p class="">Examples: • What is a Python list? • Explain inheritance in Python. • What is RAG? • What is MCP? • How does n8n work?</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<details class="group faq-accordion-item bg-surface-container-low p-6 transition-all duration-200 border border-transparent open:border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-[18px] text-on-surface">Do I need prior coding experience?</span>
+<span class="material-symbols-outlined faq-icon text-primary">add</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            No, we offer foundational courses specifically designed for beginners. However, our Advanced Python for Data Engineering and Web Backend tracks require basic familiarity with logic or introductory programming concepts.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group faq-accordion-item bg-surface-container-low p-6 transition-all duration-200 border border-transparent open:border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-[18px] text-on-surface">Are the certificates industry-recognized?</span>
+<span class="material-symbols-outlined faq-icon text-primary">add</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Yes, every student who completes a track receives a Professional Python Training Certificate signed by Gyanendra Jha. Our alumni have successfully transitioned into roles at major tech firms and corporate engineering teams.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group faq-accordion-item bg-surface-container-low p-6 transition-all duration-200 border border-transparent open:border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-[18px] text-on-surface">What is the format of the training?</span>
+<span class="material-symbols-outlined faq-icon text-primary">add</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            We utilize a hybrid approach: live mentorship sessions combined with hands-on coding labs. All sessions are recorded, and you'll have 24/7 access to our specialized logic-building exercises and project repos.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group faq-accordion-item bg-surface-container-low p-6 transition-all duration-200 border border-transparent open:border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-[18px] text-on-surface">Can I switch courses after registering?</span>
+<span class="material-symbols-outlined faq-icon text-primary">add</span>
+</summary>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Course transfers are allowed within the first two weeks of the program, provided there is availability in the requested track. We want to ensure you are in the class that best aligns with your career goals.
+                        </p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-bright">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Registration Form -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Registration Form</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Take the first step toward Python mastery. Secure your spot today.</p>
+<form class="space-y-6" id="registrationForm">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="name">FULL NAME</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="email">EMAIL ADDRESS</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="phone">PHONE NUMBER</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" id="phone" name="phone" placeholder="+1 (234) 567-890" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="interest">COURSE INTEREST</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" id="interest" name="interest" required="">
+<option disabled="" selected="" value="">Select a course</option>
+<option value="python-basics">Python Fundamentals</option>
+<option value="web-dev">Web Development with Django</option>
+<option value="data-science">Data Science &amp; Analytics</option>
+<option value="automation">Automation &amp; Scripting</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="message">MESSAGE</label>
+<textarea class="w-full px-4 py-3 bg-surface border border-outline-variant focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" id="message" name="message" placeholder="Tell us about your goals..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-bold text-lg hover:bg-primary-container transition-colors mt-4" type="submit">Register Now</button>
+</form>
+</div>
+<!-- Contact Details & Links -->
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Get in Touch</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                        Whether you're looking for corporate training or individual mentorship, our team is ready to discuss how we can help you achieve your technical objectives.
+                    </p>
+<a class="mb-6 bg-[#25D366] text-white py-4 px-6 flex items-center justify-center gap-3 font-bold text-lg hover:opacity-90 transition-opacity shadow-sm" href="https://wa.me/918951539438"><span class="material-symbols-outlined">chat</span> Contact on WhatsApp</a>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<!-- Email Link -->
+<a class="contact-card-hover bg-surface-container-low p-6 flex flex-col items-center text-center" href="mailto:mailgjha@gmail.com">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">mail</span>
+<span class="font-label-caps text-label-caps text-primary mb-1">EMAIL</span>
+<span class="font-body-md text-body-md text-on-surface">mailgjha@gmail.com</span>
+</a>
+<!-- Phone Link -->
+<a class="contact-card-hover bg-surface-container-low p-6 flex flex-col items-center text-center" href="tel:+918951539438">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">call</span>
+<span class="font-label-caps text-label-caps text-primary mb-1">PHONE</span>
+<span class="font-body-md text-body-md text-on-surface">+91 8951539438</span>
+</a>
+<!-- WhatsApp Link -->
+<a class="contact-card-hover bg-surface-container-low p-6 flex flex-col items-center text-center" href="https://wa.me/918951539438">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">chat</span>
+<span class="font-label-caps text-label-caps text-primary mb-1">WHATSAPP</span>
+<span class="font-body-md text-body-md text-on-surface">Message Trainer</span>
+</a>
+<!-- Office/Location -->
+<div class="bg-surface-container-low p-6 flex flex-col items-center text-center border border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">location_on</span>
+<span class="font-label-caps text-label-caps text-primary mb-1">LOCATION</span>
+<span class="font-body-md text-body-md text-on-surface">Remote / On-site</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-section-gap border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-1">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">Gyanendra Jha</div>
+<div class="text-body-md text-on-surface-variant dark:text-surface-variant">Python Trainer</div>
+</div>
+<div class="flex gap-8">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="mailto:mailgjha@gmail.com"><span class="material-symbols-outlined text-[20px]">mail</span> Email</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/918951539438"><span class="material-symbols-outlined text-[20px]">chat</span> WhatsApp</a>
+</div>
+<div class="text-body-md text-on-surface-variant dark:text-surface-variant">Copyright 2026</div>
+</div>
+</footer>
+<!-- AI Chat Widget Floating Components -->
+<div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+<!-- Chat Window -->
+<div class="hidden-chat mb-4 glassmorphism w-[calc(100vw-48px)] sm:w-[400px] h-[600px] max-h-[70vh] sm:max-h-[600px] rounded-2xl flex flex-col overflow-hidden shadow-2xl" id="chat-widget">
+<!-- Header -->
+<div class="bg-primary px-6 py-4 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<span class="font-headline-sm text-lg font-bold">Python AI Assistant</span>
+</div>
+<button class="hover:bg-white/10 p-1 rounded-lg transition-colors" id="close-chat">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4 chat-scroll flex flex-col" id="chat-history">
+<!-- Messages will be injected here -->
+</div>
+<!-- Typing Indicator -->
+<div class="hidden px-6 py-2" id="typing-indicator">
+<div class="bg-white/10 text-white/70 px-4 py-2 rounded-2xl rounded-bl-none inline-flex gap-1 items-center">
+<div class="w-1.5 h-1.5 bg-white/50 rounded-full typing-dot"></div>
+<div class="w-1.5 h-1.5 bg-white/50 rounded-full typing-dot"></div>
+<div class="w-1.5 h-1.5 bg-white/50 rounded-full typing-dot"></div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 bg-white/5 border-t border-white/10">
+<form class="relative flex items-center" id="chat-form">
+<input autocomplete="off" class="w-full bg-white/10 border-0 focus:ring-2 focus:ring-primary text-white rounded-xl py-3 pl-4 pr-12 placeholder:text-white/30 text-body-md" id="chat-input" placeholder="Ask about Python..." type="text"/>
+<button class="absolute right-2 p-2 text-primary hover:text-white transition-colors" type="submit">
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Toggle Button -->
+<button class="w-16 h-16 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200" id="toggle-chat">
+<span class="material-symbols-outlined text-[32px] transform transition-transform duration-300" id="toggle-icon">chat</span>
+</button>
+</div>
+<script>
+    // General UI Interactions
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const originalText = btn.innerText;
+        btn.disabled = true;
+        btn.innerText = 'Processing...';
+        setTimeout(() => {
+            btn.style.backgroundColor = '#00687b';
+            btn.innerText = 'Application Submitted!';
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = originalText;
+                btn.style.backgroundColor = '';
+                e.target.reset();
+            }, 3000);
+        }, 1500);
+    });
+
+    document.querySelectorAll('.contact-card-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if(icon) {
+                icon.style.transform = 'scale(1.2) translateY(-2px)';
+                icon.style.transition = 'transform 0.3s ease';
+            }
+        });
+        card.addEventListener('mouseleave', () => {
+            const icon = card.querySelector('.material-symbols-outlined');
+            if(icon) icon.style.transform = 'scale(1) translateY(0px)';
+        });
+    });
+
+    // Chat Widget Logic
+    const chatWidget = document.getElementById('chat-widget');
+    const toggleBtn = document.getElementById('toggle-chat');
+    const closeBtn = document.getElementById('close-chat');
+    const toggleIcon = document.getElementById('toggle-icon');
+    const chatHistory = document.getElementById('chat-history');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const typingIndicator = document.getElementById('typing-indicator');
+
+    let isChatOpen = false;
+
+    function toggleChat() {
+        isChatOpen = !isChatOpen;
+        if (isChatOpen) {
+            chatWidget.classList.remove('hidden-chat');
+            toggleIcon.innerText = 'close';
+            toggleIcon.style.transform = 'rotate(180deg)';
+            if(chatHistory.children.length === 0) {
+                addMessage("Hi! I'm your Python AI Assistant. Ask me anything about Python, AI, ML, NLP, RAG, MCP, Automation, SQLite, or Data Analysis.", 'bot');
+            }
+            chatInput.focus();
+        } else {
+            chatWidget.classList.add('hidden-chat');
+            toggleIcon.innerText = 'chat';
+            toggleIcon.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    toggleBtn.addEventListener('click', toggleChat);
+    closeBtn.addEventListener('click', toggleChat);
+
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} w-full animate-in fade-in slide-in-from-bottom-2 duration-300`;
+        
+        const bubble = document.createElement('div');
+        bubble.className = `max-w-[85%] px-4 py-2 rounded-2xl text-body-md ${
+            sender === 'user' 
+            ? 'bg-primary text-white rounded-br-none' 
+            : 'bg-white/10 text-white rounded-bl-none border border-white/5'
+        }`;
+        bubble.innerText = text;
+        
+        messageDiv.appendChild(bubble);
+        chatHistory.appendChild(messageDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'user');
+        chatInput.value = '';
+        typingIndicator.classList.remove('hidden');
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+
+        try {
+            const response = await fetch('https://gjautomation.app.n8n.cloud/webhook/ab0a4888-6d34-4ab1-961a-950fcba659a1/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chatInput: message,
+                    sessionId: "web-user"
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Chatbot Response:', data);
+            
+            // Handle response fields as requested
+            const botResponse = data.output || data.answer || data.message || "I couldn't process that response.";
+            
+            typingIndicator.classList.add('hidden');
+            addMessage(botResponse, 'bot');
+        } catch (error) {
+            console.error('Chat Error:', error);
+            typingIndicator.classList.add('hidden');
+            addMessage("Sorry, the assistant is temporarily unavailable.", 'bot');
+        }
+    });
+</script>
+</body></html>
